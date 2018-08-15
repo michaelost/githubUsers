@@ -13,8 +13,19 @@ var axios = require('axios');
     return followers;
   }
 
-  var users = await getGithubUsers();
+  function sortArray(arr) {
+    var sortedUsers = [];
+    sortedUsers = arr.sort(function(a, b) {
+      if (a.login < b.login)
+        return -1;
+      if (a.login > b.login)
+        return 1;
+    })
+     return sortedUsers;
+  }
+  var followers = await getGithubUsers()
+  var sortedUsers = sortArray(followers)
+  console.log('sortedUsers', sortedUsers);
 
-  console.log('users', users);
 
 })()
