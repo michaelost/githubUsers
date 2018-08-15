@@ -1,6 +1,5 @@
 var axios = require('axios');
 
-
 (async function () {
   var getGithubUsers = async function (userName) {
     const response = await axios.get('https://api.github.com/users/michaelost/followers');
@@ -19,4 +18,3 @@ var axios = require('axios');
   console.log('users', users);
 
 })()
-
